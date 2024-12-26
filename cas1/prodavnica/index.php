@@ -92,7 +92,7 @@
         */
 
         foreach($_SESSION['korpa'] as $proizvodiUSesiji) {
-            foreach($proizvodi as &$pr) {
+            foreach($proizvodi as $pr) {
                 if($proizvodiUSesiji == $pr['id']) {
 
                     if(count($korpa) == 0) {
