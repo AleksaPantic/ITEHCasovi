@@ -17,8 +17,12 @@
 
 <body>
     <p>
-    Vasa korpa sadrzi:proizvoda
-    </p>
+    Vasa korpa sadrzi:
+    <?php 
+        count($korpa);
+    ?> proizvoda
+
+    </p>    
     <a href="?vidi_korpu">
         Vidi korpu:
     </a>
@@ -48,38 +52,6 @@
             </tr>
 
             <?php endforeach; ?>
-
-            <!--
-            <tr>
-                <?php foreach($proizvodi as $pr) {?>
-
-                <td><?php echo '$pr=>naziv'; ?></td>
-                <td><?php echo '$pr=>cena'; }?> </td>
-                <td>
-                    <form action="">
-                        <input type="submit" name="Submit" value="Kupi">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>Mis</td>
-                <td>200</td>
-                <td>
-                    <form action="">
-                        <input type="submit" name="Submit" value="Kupi">
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td>Slusalice</td>
-                <td>100</td>
-                <td>
-                    <form action="">
-                        <input type="submit" name="Submit" value="Kupi">
-                    </form>
-                </td>
-            </tr>
-            -->
 
         </tbody>
     </table>

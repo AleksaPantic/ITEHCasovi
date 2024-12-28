@@ -42,8 +42,10 @@
     if(isset($_POST['submit']) && $_POST['submit'] == 'Kupi') {
         $_SESSION['korpa'][] = $_POST['id'];
         header('Location: .');
-        exit();  
+        exit();
     }
+    
+    $korpa = array();
 
     if(isset($_GET["vidi_korpu"])) {
         /* 
@@ -59,7 +61,6 @@
         */
 
         $ukupno = 0;
-        $korpa = array();
 
         /*
 
@@ -92,7 +93,7 @@
         */
 
         foreach($_SESSION['korpa'] as $proizvodiUSesiji) {
-            foreach($proizvodi as &$pr) {
+            foreach($proizvodi as $pr) {
                 if($proizvodiUSesiji == $pr['id']) {
 
                     if(count($korpa) == 0) {
@@ -150,7 +151,7 @@
 
         include "korpa.php";
         exit();
-    } 
+    }
 
     include "katalog.php";
 
