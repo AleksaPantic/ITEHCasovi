@@ -17,8 +17,12 @@
 
 <body>
     <p>
-    Vasa korpa sadrzi:proizvoda
-    </p>
+    Vasa korpa sadrzi:
+    <?php 
+        count($korpa);
+    ?> proizvoda
+
+    </p>    
     <a href="?vidi_korpu">
         Vidi korpu:
     </a>
