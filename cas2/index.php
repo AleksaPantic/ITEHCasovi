@@ -17,6 +17,8 @@
 
         $odgovor = User::logInUser($korisnik, $conn); // ------- moze zato sto je logInUser() staticka funkcija
 
+        // $odgovor mora imati jedan, jedinstven username i password za taj username
+
         if($odgovor->num_rows == 1) { 
             echo `<script>console.log("Uspesno ste se ulogovali");</script>`;
 
