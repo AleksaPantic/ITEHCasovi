@@ -27,6 +27,18 @@
             //$rezultat = $conn->query($query);
             return $conn->query($query)->fetch_assoc();
         }
+
+        public function deleteByID(mysqli $conn) {
+            $query = "DELETE FROM prijave WHERE id=$this->id";
+            return $conn->query($query);
+        }
+
+        public static function add(Prijava $p, mysqli $conn) {
+            $query = "INSERT INTO prijave (predmet, katedra, sala, datum)
+                    VALUES('$p->predmet', '$p->katedra', '$p->sala', '$p->datum')";
+        
+            return $conn->query($query);
+        }
     }
 
 ?>
