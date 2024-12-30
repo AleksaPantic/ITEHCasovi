@@ -17,9 +17,11 @@
         die();
     }
 
+    $ima_prijava = true;
+
     if($result->num_rows == 0) {
         echo "Nema prijava za kolokvijume.";
-        die();
+        $ima_prijava = false;
     }
     
 ?>
@@ -76,9 +78,10 @@
             <?php
             
             $result = Prijava::getAll($conn);
-        
-            while ($red = $result->fetch_array()) {
-                ?>
+            if($ima_prijava) {
+
+                while ($red = $result->fetch_array()) {
+                    ?>
                 <tr>
                     <td><?php echo $red["predmet"] ?></td>
                     <td><?php echo $red["katedra"] ?></td>
@@ -90,9 +93,10 @@
                             <span class="checkmark"></span>
                         </label>
                     </td>
-
+                    
                 </tr>
                 <?php
+                }        
             }
             ?>
             </tbody>
