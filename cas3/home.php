@@ -1,3 +1,18 @@
+<?php
+
+    require "dbBroker.php";
+    require "model/prijava.php";
+
+    session_start();
+
+    if(!isset($_SESSION['user_id'])) {
+        header('Location: index.php');
+        exit();
+    } 
+
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +62,9 @@
             </thead>
             <tbody>
             <?php
+            
+            $result = Prijava::getAll($conn);
+        
             while ($red = $result->fetch_array()) {
                 ?>
                 <tr>
