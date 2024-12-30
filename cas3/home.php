@@ -23,6 +23,19 @@
         echo "Nema prijava za kolokvijume.";
         $ima_prijava = false;
     }
+
+    /* $test = Prijava::getByID(10, $conn);
+
+    echo $test['id'];
+    echo "<br>";
+    echo $test['predmet'];
+    echo "<br>";
+    echo $test['katedra'];
+    echo "<br>";
+    echo $test['sala'];
+    echo "<br>";
+    echo $test['datum']; */
+
     
 ?>
 

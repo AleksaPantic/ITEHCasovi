@@ -21,6 +21,12 @@
 
             return $conn->query($query);
         }
+
+        public static function getByID($id, mysqli $conn) {
+            $query = "SELECT * FROM prijave WHERE id = $id";
+            //$rezultat = $conn->query($query);
+            return $conn->query($query)->fetch_assoc();
+        }
     }
 
 ?>
