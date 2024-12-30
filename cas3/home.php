@@ -10,6 +10,18 @@
         exit();
     } 
 
+    $result = Prijava::getAll($conn);
+
+    if(!$result) {
+        echo "Nastala je greska prilikom izvodjenja upita. <br>";
+        die();
+    }
+
+    if($result->num_rows == 0) {
+        echo "Nema prijava za kolokvijume.";
+        die();
+    }
+    
 ?>
 
 
